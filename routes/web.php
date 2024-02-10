@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/lapor', function () {
+    return view('lapor');
+});
+
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/lapor', function () {
+//         return view('lapor');
+//     });
+// });

@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('taxreports', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_lengkap');
-            $table->string('username')->unique();
-            $table->string('npwpd')->unique();
-            $table->string('alamat_lengkap');
-            $table->string('no_hp');
-            $table->string('password');
-            $table->rememberToken();
+            $table->date('tanggal');
+            $table->string('jenis_pajak');
+            $table->integer('jumlah_omset');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('taxreports');
     }
 };
